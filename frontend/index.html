@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 1: Document Upload | OCR & Semantic Similarity Framework</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-icon">AI</div>
+      <div>
+        <div class="navbar-title">Adaptive OCR Framework</div>
+        <div class="navbar-subtitle">Hybrid Semantic Similarity & Plagiarism Detection</div>
+      </div>
+    </div>
+    <div class="navbar-badge">Module 1: Document Upload</div>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="main-container">
+    <section class="hero-section">
+      <h1 class="hero-title">Document Ingestion & Validation</h1>
+      <p class="hero-description">
+        Upload handwritten, scanned, or printed document images. The framework validates file integrity, dimensions, and readability before passing the document to the adaptive OCR pipeline.
+      </p>
+    </section>
+
+    <!-- Upload Grid -->
+    <div class="upload-grid">
+      
+      <!-- Upload Card -->
+      <div class="card">
+        <h2 class="card-title">
+          <span>📤</span> Upload Document
+        </h2>
+
+        <div class="dropzone" id="dropzone">
+          <div class="dropzone-icon">☁️</div>
+          <div class="dropzone-text-primary">Drag and drop your document here</div>
+          <div class="dropzone-text-secondary">or click to browse from your computer</div>
+          <button class="browse-btn" type="button" onclick="document.getElementById('file-input').click()">Browse Files</button>
+          <input type="file" id="file-input" accept=".jpg,.jpeg,.png,.bmp,.tiff,.webp,.pdf">
+          
+          <div class="supported-types">
+            Supported formats: JPG, PNG, BMP, TIFF, WEBP, PDF (Max 15 MB)
+          </div>
+        </div>
+
+        <!-- Progress Box -->
+        <div class="status-box" id="status-box">
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" id="progress-bar"></div>
+          </div>
+          <div class="status-message">
+            <span id="status-text">Uploading & validating document...</span>
+            <span id="progress-percent">0%</span>
+          </div>
+        </div>
+
+        <!-- Error/Success Alert -->
+        <div id="alert-container"></div>
+      </div>
+
+      <!-- Preview Card -->
+      <div class="card">
+        <h2 class="card-title">
+          <span>🖼️</span> Document Preview & Readability
+        </h2>
+
+        <!-- Placeholder when no file uploaded -->
+        <div class="preview-placeholder" id="preview-placeholder">
+          <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📄</div>
+          <p style="font-weight: 600; color: var(--text-secondary); margin-bottom: 0.25rem;">No Document Selected</p>
+          <p style="font-size: 0.8rem;">Upload a document image to inspect file properties and readability metrics.</p>
+        </div>
+
+        <!-- Active Preview -->
+        <div class="preview-content" id="preview-content">
+          <div class="image-preview-container">
+            <img id="preview-img" src="" alt="Uploaded Document Preview">
+          </div>
+
+          <table class="metadata-table">
+            <tbody>
+              <tr>
+                <td class="metadata-label">Document ID</td>
+                <td class="metadata-value" id="meta-doc-id">-</td>
+              </tr>
+              <tr>
+                <td class="metadata-label">Original Filename</td>
+                <td class="metadata-value" id="meta-filename">-</td>
+              </tr>
+              <tr>
+                <td class="metadata-label">File Size</td>
+                <td class="metadata-value" id="meta-size">-</td>
+              </tr>
+              <tr>
+                <td class="metadata-label">Resolution</td>
+                <td class="metadata-value" id="meta-dimensions">-</td>
+              </tr>
+              <tr>
+                <td class="metadata-label">Color Channels / Mode</td>
+                <td class="metadata-value" id="meta-mode">-</td>
+              </tr>
+              <tr>
+                <td class="metadata-label">SHA-256 Checksum</td>
+                <td class="metadata-value" id="meta-checksum" style="font-size: 0.75rem;">-</td>
+              </tr>
+              <tr>
+                <td class="metadata-label">Readability Status</td>
+                <td class="metadata-value">
+                  <span class="badge badge-success" id="meta-readability">Valid for OCR</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    Final Year B.Tech CSE Mega Project (2025–26) • Annasaheb Dange College of Engineering and Technology, Ashta
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

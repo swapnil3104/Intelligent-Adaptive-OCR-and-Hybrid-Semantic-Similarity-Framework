@@ -1,0 +1,14 @@
+# Intelligent Adaptive OCR & Hybrid Semantic Similarity Framework
+# Core Backend & Document Upload Requirements
+
+fastapi>=0.100.0
+uvicorn>=0.20.0
+python-multipart>=0.0.6
+pydantic>=2.0.0
+pillow>=10.0.0
+opencv-python>=4.8.0
+numpy>=1.24.0
+
+# Testing & Utilities
+pytest>=7.4.0
+httpx>=0.24.0
